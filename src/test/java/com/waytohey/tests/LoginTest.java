@@ -44,7 +44,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    void emptyPAssTest() {
+    void emptyPassTest() {
         loginWindow.openLoginWindow()
                 .typeLogin(userWrongLog.getLogin())
                 .typePassword(userWrongLog.getPass())
