@@ -21,8 +21,11 @@ public class TestBase {
         Configuration.browserVersion="77.0";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("version", "77.0");
 
 
         Configuration.browserCapabilities = capabilities;
