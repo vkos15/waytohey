@@ -7,6 +7,7 @@ import com.waytohey.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.waytohey.config.Project.projectConfig;
@@ -21,16 +22,19 @@ public class TestBase {
         Configuration.browserVersion="77.0";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        ChromeOptions chromeOptions = new ChromeOptions();
 
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-infobars");
+        chromeOptions.addArguments("--disable-popup-blocking");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--lang=en-en");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setBrowserName("chrome");
-        capabilities.setVersion("77.0");
-        //capabilities.setCapability("browserName", "chrome");
-       // capabilities.setCapability("browserVersion", "77.0");
 
-
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
+
 
         //  String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
         // String remote =projectConfig.remoteDriverUrl();
