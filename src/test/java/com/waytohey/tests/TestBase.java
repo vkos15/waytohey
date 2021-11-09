@@ -17,9 +17,9 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
-        Configuration.baseUrl = "https://waytohey.com/";
-        Configuration.browser="chrome";
-        Configuration.browserVersion="77.0";
+        Configuration.baseUrl = "https://waytohey.com";
+       // Configuration.browser="chrome";
+       // Configuration.browserVersion="77.0";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
