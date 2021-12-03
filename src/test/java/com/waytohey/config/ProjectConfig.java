@@ -8,8 +8,11 @@ import org.aeonbits.owner.Config;
         "classpath:config/prod.properties"
 })
 public interface ProjectConfig extends Config {
+
+    @DefaultValue("valentina71551")
     String login_correct();
 
+    @DefaultValue("r347b7")
     String password_correct();
 
     String remoteDriverUrl();

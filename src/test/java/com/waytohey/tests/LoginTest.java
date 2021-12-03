@@ -19,7 +19,6 @@ public class LoginTest extends TestBase {
                    .typeLogin(userOK.getLogin())
                    .typePassword(userOK.getPass())
                    .submitLoginForm();
-
         // loginWindow.checkErrorLoginMessage("User with that username doesn't exist");
     }
 

@@ -10,8 +10,8 @@ public class RegistrationTest extends TestBase {
 
     @Test
     void mainPageTestText() {
-     regPage.openMainPage()
-             .checkTextonMainPage();
+        regPage.openMainPage()
+                .checkTextonMainPage();
     }
 
     @Test
@@ -20,7 +20,11 @@ public class RegistrationTest extends TestBase {
                 .checkLogoOnMainPage();
     }
 
-
+    @Test
+    void submitEmptyForm() {
+        regPage.openMainPage()
+                .clickSubmit();
+    }
 
 
 }
