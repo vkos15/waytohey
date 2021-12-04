@@ -4,6 +4,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -52,6 +55,34 @@ public class RegistrationPage {
     public void clickSubmit() {
         $(byValue("Sign up")).click();
 
+    }
+
+    @Step("Проверяем сообщение об ошибке у поля имени")
+    public RegistrationPage checkErrorName(String error) {
+        $("#input_name+i.error_message").shouldBe(visible).shouldHave(text(error));
+        return this;
+    }
+
+    @Step("Проверяем сообщение об ошибке у поля email")
+    public RegistrationPage checkErrorEmail(String error) {
+        $("#input_email+i.error_message").shouldBe(visible).shouldHave(text(error));
+        return this;
+    }
+
+    @Step("Проверяем наличие пункта принятия пользовательского соглашения")
+    public RegistrationPage checkAgreement() {
+        $("#reg_regul").shouldHave(text("I agree with Terms of Service and Privacy Policy"));
+        return this;
+    }
+
+    public RegistrationPage openTermsService() {
+        $(byText("Terms of Service")).click();
+        return this;
+    }
+
+    public RegistrationPage openPrivacyPolicy() {
+        $(byText("Privacy Policy")).click();
+        return this;
     }
 
 

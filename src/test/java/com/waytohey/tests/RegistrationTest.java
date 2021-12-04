@@ -24,6 +24,10 @@ public class RegistrationTest extends TestBase {
     void submitEmptyForm() {
         regPage.openMainPage()
                 .clickSubmit();
+        regPage.checkErrorName("Specify your name")
+                .checkErrorEmail("Enter your email");
+
+
     }
 
 
