@@ -75,6 +75,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Открываем пользовательское соглашение")
     public RegistrationPage openTermsService() {
         $(byText("Terms of Service")).click();
         return this;

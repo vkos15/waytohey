@@ -17,5 +17,8 @@ public interface ProjectConfig extends Config {
 
     String remoteDriverUrl();
 
+    @DefaultValue("dfg@ml.rootkid.ru")
+    String exist_email();
+
 
 }
