@@ -14,7 +14,7 @@ public class TestData {
     public static User userOK = new User(projectConfig.login_correct(), projectConfig.password_correct());
     public static User userWrongLog = new User("valentina715153", "qweqwe");
 
-    public static User userRandom = new User(nameRandom, emailRandom);
+    public static User userRandom = new User(nameRandom, emailRandom, "34");
 
 
 }

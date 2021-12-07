@@ -18,19 +18,23 @@ public class User {
     public User(String name, String email, String dateOfBirth) {
         this.name = name;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
+  //      this.dateOfBirth = dateOfBirth;
     }
 
     public String getLogin () {
        return login;
     }
 
-    public String getPass () {
+    public String getPass() {
         return password;
     }
 
-    public String getName () {
+    public String getName() {
         return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
 

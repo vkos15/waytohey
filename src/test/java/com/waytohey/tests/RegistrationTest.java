@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.waytohey.config.Project.projectConfig;
+import static com.waytohey.tests.TestData.emailRandom;
+import static com.waytohey.tests.TestData.nameRandom;
 
 
 public class RegistrationTest extends TestBase {
@@ -42,6 +45,18 @@ public class RegistrationTest extends TestBase {
                 .clickSubmit();
         regPage.checkErrorEmail("This email is already in use");
         $("#mail_dup_login").shouldHave(text("Sign in to your profile?"));
+
+    }
+
+    @Test
+    void regWithCorrectData() {
+        regPage.openMainPage()
+                .fillName(nameRandom)
+                .fillEmail(emailRandom)
+                .clickSubmit();
+        sleep(5000);
+        // regPage.checkErrorEmail("This email is already in use");
+        // $("#mail_dup_login").shouldHave(text("Sign in to your profile?"));
 
     }
 
